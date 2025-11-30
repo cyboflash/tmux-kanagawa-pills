@@ -45,7 +45,7 @@ main() {
   # Separators
   local left_sep=$(get_tmux_option "@kanagawa_left_sep" "")
   local right_sep=$(get_tmux_option "@kanagawa_right_sep" "")
-  local window_sep=$(get_tmux_option "@kanagawa_window_sep" " █")
+  local window_sep=$(get_tmux_option "@kanagawa_window_sep" "")
 
   # Set Status Left (Session)
   local session_color=$(get_tmux_option "@kanagawa_session_color" "$THM_YELLOW")
