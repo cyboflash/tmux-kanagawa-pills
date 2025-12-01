@@ -31,7 +31,7 @@ main() {
 
   # 4. Apply Status Configuration
   tmux set-option -g status-position top
-  tmux set-option -g status-justify left
+  local align=$(get_tmux_option "@kanagawa_window_align" "left"); tmux set-option -g status-justify "$align"
   tmux set-option -g status-style "bg=$bg_bar"
   tmux set-option -g status-left-length 100
   tmux set-option -g status-right-length 200
