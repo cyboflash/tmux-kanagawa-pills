@@ -7,7 +7,7 @@ source "$CURRENT_DIR/utils/get_tmux_option.sh"
 source "$CURRENT_DIR/utils/module_utils.sh"
 
 main() {
-  # 1. Load Theme Variables
+  tmux set-option -g mouse on  # 1. Load Theme Variables
   local theme=$(get_tmux_option "@kanagawa_theme" "wave")
   source "$CURRENT_DIR/themes/$theme.sh"
 
@@ -38,7 +38,7 @@ main() {
 
   tmux set-option -g status-style "bg=$bg_bar"
   tmux set-option -g status-left-length 100
-  tmux set-option -g status-right-length 200
+  tmux bind-key -n MouseDown1StatusLeft choose-tree -Zs  tmux set-option -g status-right-length 200
 
   # Fetch Colors
   local active_bg=$(get_tmux_option "@kanagawa_active_bg" "$THM_BLUE")
@@ -56,7 +56,7 @@ main() {
   local session_fg=$(get_tmux_option "@kanagawa_bg_base" "$THM_BG_BASE")
 
   tmux set-option -g status-left "#[fg=$session_color,bg=$bg_bar]$left_sep#[fg=$session_fg,bg=$session_color,bold] ❐ #S #[fg=$session_color,bg=$bg_bar]$right_sep "
-
+  tmux bind-key -n MouseDown1StatusLeft choose-tree -Zs
   # Set Status Right (Modules)
   tmux set-option -g status-right "$status_right_string"
 
