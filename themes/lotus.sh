@@ -1,14 +1,12 @@
-# Kanagawa Lotus (Light) Palette
-THM_BG_BASE="#F2ECBC"
-THM_BG_SURFACE="#E5E5E5"
-THM_FG_TEXT="#545464"
+THM_BG_BASE="#F2ECBC"    # Lotus White 3
+THM_BG_SURFACE="#E5E5E5" # Custom Surface (Light)
+THM_FG_TEXT="#545464"    # Lotus Ink 1
 THM_BG_BAR="default"
-
-THM_RED="#D7474B"
-THM_GREEN="#6F8F6F"
-THM_YELLOW="#836F4A"
-THM_BLUE="#6693BF"
-THM_MAGENTA="#766B90"
-THM_CYAN="#597B75"
-THM_ORANGE="#CC6D00"
-THM_GRAY="#8A8980"
+THM_RED="#D7474B"        # Lotus Red 2
+THM_GREEN="#6F8F6F"      # Lotus Green
+THM_YELLOW="#836F4A"     # Lotus Yellow 2
+THM_BLUE="#6693BF"       # Lotus Teal 2
+THM_MAGENTA="#B35B79"    # Lotus Pink
+THM_CYAN="#597B75"       # Lotus Teal 1 (Approx)
+THM_ORANGE="#CC6D00"     # Lotus Orange
+THM_GRAY="#8A8980"       # Lotus Gray 3

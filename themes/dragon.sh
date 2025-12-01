@@ -1,14 +1,12 @@
-# Kanagawa Dragon Palette
-THM_BG_BASE="#181616"
-THM_BG_SURFACE="#1F1F28"
-THM_FG_TEXT="#C8C093"
+THM_BG_BASE="#181616"    # Sumi Ink 0
+THM_BG_SURFACE="#1F1F28" # Sumi Ink 1
+THM_FG_TEXT="#C8C093"    # Old White
 THM_BG_BAR="default"
-
-THM_RED="#C34043"
-THM_GREEN="#87A987"
-THM_YELLOW="#C0A36E"
-THM_BLUE="#7FB4CA"
-THM_MAGENTA="#957FB8"
-THM_CYAN="#7AA89F"
-THM_ORANGE="#FF9E3B"
-THM_GRAY="#727169"
+THM_RED="#C4746E"        # Dragon Red
+THM_GREEN="#8A9A7B"      # Dragon Green
+THM_YELLOW="#C0A36E"     # Boat Yellow 2
+THM_BLUE="#658594"       # Dragon Blue
+THM_MAGENTA="#A292A3"    # Dragon Pink
+THM_CYAN="#8EA4A2"       # Dragon Aqua
+THM_ORANGE="#B6927B"     # Dragon Orange
+THM_GRAY="#727169"       # Fuji Gray

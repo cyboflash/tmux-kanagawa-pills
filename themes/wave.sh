@@ -1,14 +1,12 @@
-# Kanagawa Wave (Default) Palette
-THM_BG_BASE="#1F1F28"
-THM_BG_SURFACE="#2A2A37"
-THM_FG_TEXT="#DCD7BA"
+THM_BG_BASE="#1F1F28"    # Sumi Ink 1
+THM_BG_SURFACE="#2A2A37" # Sumi Ink 4
+THM_FG_TEXT="#DCD7BA"    # Fuji White
 THM_BG_BAR="default"
-
-THM_RED="#E46876"
-THM_GREEN="#98BB6C"
-THM_YELLOW="#E6C384"
-THM_BLUE="#7E9CD8"
-THM_MAGENTA="#957FB8"
-THM_CYAN="#7AA89F"
-THM_ORANGE="#FFA066"
-THM_GRAY="#727169"
+THM_RED="#C34043"        # Autumn Red
+THM_GREEN="#76946A"      # Autumn Green
+THM_YELLOW="#C0A36E"     # Boat Yellow 2
+THM_BLUE="#7E9CD8"       # Crystal Blue
+THM_MAGENTA="#957FB8"    # Oni Violet
+THM_CYAN="#7AA89F"       # Wave Aqua 2
+THM_ORANGE="#FFA066"     # Surimi Orange
+THM_GRAY="#727169"       # Fuji Gray
