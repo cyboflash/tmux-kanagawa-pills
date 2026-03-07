@@ -3,6 +3,7 @@
 # Determine Plugin Root and load theme
 PLUGIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 source "$PLUGIN_DIR/utils/theme.sh"
+source "$PLUGIN_DIR/utils/module_utils.sh"
 
 PID=$1
 ABBR_LEN=$2
@@ -77,9 +78,9 @@ if [ -n "$SSH_CMD" ]; then
     fi
 
     # Output PILL
-    local output="$ICON ssh:$HOST"
+    output="$ICON ssh:$HOST"
     if [ "$SHOW_DIR" == "1" ]; then
-        local dir_name=$(basename "$DIR")
+        dir_name=$(basename "$DIR")
         output="$output ($dir_name)"
     fi
 
