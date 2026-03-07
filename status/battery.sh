@@ -1,8 +1,10 @@
 show_battery() {
-  local color=$(get_tmux_option "@kanagawa_battery_color" "$THM_ORANGE")
+  local colors=$(get_module_colors "battery" "$THM_ORANGE")
+  local bg=$(echo "$colors" | cut -d' ' -f1)
+  local fg=$(echo "$colors" | cut -d' ' -f2)
   local icon=$(get_tmux_option "@kanagawa_battery_icon" "")
   # Simple cross-platform battery check
   local text="#{?battery_percentage,#{battery_percentage},#(pmset -g batt | grep -o '[0-9]*%%' || echo 'N/A')}"
 
-  build_module "$text" "$icon" "$color"
+  build_module "$text" "$icon" "$bg" "$fg"
 }

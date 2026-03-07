@@ -2,12 +2,14 @@
 
 PID=$1
 ABBR_LEN=$2
-COLOR=$3
-TEXT_COLOR=$4
+BG=$3
+FG=$4
 BAR_BG=$5
 L_SEP=$6
 R_SEP=$7
 ICON=$8
+DIR=$9
+SHOW_DIR=${10}
 
 # Function to check a specific PID for SSH
 check_pid_for_ssh() {
@@ -68,7 +70,13 @@ if [ -n "$SSH_CMD" ]; then
     fi
 
     # Output PILL
-    echo "#[fg=$COLOR,bg=$BAR_BG]$L_SEP#[fg=$TEXT_COLOR,bg=$COLOR,bold]$ICON ssh:$HOST#[fg=$COLOR,bg=$BAR_BG]$R_SEP "
+    local output="$ICON ssh:$HOST"
+    if [ "$SHOW_DIR" == "1" ]; then
+        local dir_name=$(basename "$DIR")
+        output="$output ($dir_name)"
+    fi
+
+    echo "#[fg=$BG,bg=$BAR_BG]$L_SEP#[fg=$FG,bg=$BG,bold]$output#[fg=$BG,bg=$BAR_BG]$R_SEP "
 else
     # Output NOTHING
     echo ""
