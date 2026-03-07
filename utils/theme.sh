@@ -24,16 +24,3 @@ if [ -f "$THM_CUSTOM_FILE" ]; then
   source "$THM_CUSTOM_FILE"
 fi
 
-# 3. Apply Individual Palette Overrides from tmux.conf (Highest priority)
-THM_BG_BASE=$(get_tmux_option "@kanagawa_bg_base" "$THM_BG_BASE")
-THM_BG_SURFACE=$(get_tmux_option "@kanagawa_bg_surface" "$THM_BG_SURFACE")
-THM_FG_TEXT=$(get_tmux_option "@kanagawa_fg_text" "$THM_FG_TEXT")
-THM_BG_BAR=$(get_tmux_option "@kanagawa_bg_bar" "$THM_BG_BAR")
-THM_RED=$(get_tmux_option "@kanagawa_red" "$THM_RED")
-THM_GREEN=$(get_tmux_option "@kanagawa_green" "$THM_GREEN")
-THM_YELLOW=$(get_tmux_option "@kanagawa_yellow" "$THM_YELLOW")
-THM_BLUE=$(get_tmux_option "@kanagawa_blue" "$THM_BLUE")
-THM_MAGENTA=$(get_tmux_option "@kanagawa_magenta" "$THM_MAGENTA")
-THM_CYAN=$(get_tmux_option "@kanagawa_cyan" "$THM_CYAN")
-THM_ORANGE=$(get_tmux_option "@kanagawa_orange" "$THM_ORANGE")
-THM_GRAY=$(get_tmux_option "@kanagawa_gray" "$THM_GRAY")

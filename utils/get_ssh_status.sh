@@ -2,20 +2,21 @@
 
 # Determine Plugin Root and load theme
 PLUGIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+source "$PLUGIN_DIR/utils/options.sh"
 source "$PLUGIN_DIR/utils/theme.sh"
 source "$PLUGIN_DIR/utils/module_utils.sh"
 
 PID=$1
 DIR=$2
 
-# Fetch all configuration directly from tmux for robustness
-ABBR_LEN=$(get_tmux_option "@kanagawa_ssh_abbr" "0")
-BAR_BG=$(get_tmux_option "@kanagawa_bar_bg" "default")
-L_SEP=$(get_tmux_option "@kanagawa_left_sep" "")
-R_SEP=$(get_tmux_option "@kanagawa_right_sep" "")
-ICON=$(get_tmux_option "@kanagawa_ssh_icon" "")
-SHOW_DIR=$(get_tmux_option "@kanagawa_ssh_show_dir" "1")
-DIR_ICON=$(get_tmux_option "@kanagawa_directory_icon" "")
+# Resolve configuration from standardized variables
+ABBR_LEN="$KANAGAWA_SSH_ABBR"
+BAR_BG="$KANAGAWA_BAR_BG"
+L_SEP="$KANAGAWA_LEFT_SEP"
+R_SEP="$KANAGAWA_RIGHT_SEP"
+ICON="$KANAGAWA_SSH_ICON"
+SHOW_DIR="$KANAGAWA_SSH_SHOW_DIR"
+DIR_ICON="$KANAGAWA_DIRECTORY_ICON"
 
 # Resolve SSH colors
 COLORS=$(get_module_colors "ssh" "$THM_MAGENTA")

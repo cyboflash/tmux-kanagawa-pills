@@ -3,9 +3,10 @@
 # This function builds the "Pill" string for a specific module
 # Usage: build_module "text" "icon" "bg_color" "fg_color"
 build_module() {
-  # Ensure theme is loaded if we are called in a context that hasn't loaded it
+  # Ensure theme and options are loaded if we are called in a context that hasn't loaded it
   if [ -z "$THM_BG_SURFACE" ]; then
     local plugin_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+    source "$plugin_dir/utils/options.sh"
     source "$plugin_dir/utils/theme.sh"
   fi
 
@@ -14,17 +15,16 @@ build_module() {
   local module_bg="$3"
   local module_fg="$4"
 
-  local left_sep=$(get_tmux_option "@kanagawa_left_sep" "")
-  local right_sep=$(get_tmux_option "@kanagawa_right_sep" "")
-  local bg_bar=$(get_tmux_option "@kanagawa_bar_bg" "default")
+  local left_sep="$KANAGAWA_LEFT_SEP"
+  local right_sep="$KANAGAWA_RIGHT_SEP"
+  local bg_bar="$KANAGAWA_BAR_BG"
 
   # Fetch default foreground color (User Override > Theme Default)
-  # We rely on the theme being sourced in main to provide $THM_BG_SURFACE default
   if [ -z "$module_fg" ]; then
-    module_fg=$(get_tmux_option "@kanagawa_bg_surface" "$THM_BG_SURFACE")
+    module_fg="$THM_BG_SURFACE"
   fi
 
-  local connect=$(get_tmux_option "@kanagawa_status_connect_separator" "no")
+  local connect="$KANAGAWA_CONNECT_SEP"
   local spacer=" "
 
   if [ "$connect" == "yes" ]; then

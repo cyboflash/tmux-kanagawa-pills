@@ -2,6 +2,7 @@
 
 # Determine Plugin Root and load theme
 PLUGIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+source "$PLUGIN_DIR/utils/options.sh"
 source "$PLUGIN_DIR/utils/theme.sh"
 source "$PLUGIN_DIR/utils/module_utils.sh"
 
@@ -45,11 +46,10 @@ if [ -z "$SSH_CMD" ]; then
   COLORS=$(get_module_colors "directory" "$THM_BLUE")
   BG=$(echo "$COLORS" | cut -d' ' -f1)
   FG=$(echo "$COLORS" | cut -d' ' -f2)
-  ICON=$(get_tmux_option "@kanagawa_directory_icon" "")
+  ICON="$KANAGAWA_DIRECTORY_ICON"
   
   # When calling build_module, we don't want the text to be re-evaluated by tmux conditional 
   # so we use literal values. We also need to be careful with the text passed from show_directory.
-  # The text is likely "#{b:pane_path}" or similar.
   build_module "$DIR" "$ICON" "$BG" "$FG"
 else
   # Output NOTHING
