@@ -16,7 +16,7 @@ main() {
   local bg_bar=$(get_tmux_option "@kanagawa_bar_bg" "$THM_BG_BAR")
 
   # 3. Build Right Status Modules
-  local modules_list=$(get_tmux_option "@kanagawa_plugins" "directory session date_time")
+  local modules_list=$(get_tmux_option "@kanagawa_plugins" "ssh_info session date_time directory")
   local status_right_string=""
 
   for module in $modules_list; do

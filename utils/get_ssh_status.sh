@@ -13,6 +13,7 @@ R_SEP=$5
 ICON=$6
 DIR=$7
 SHOW_DIR=$8
+DIR_ICON=$9
 
 # Resolve SSH colors using standard logic
 COLORS=$(get_module_colors "ssh" "$THM_MAGENTA")
@@ -81,7 +82,7 @@ if [ -n "$SSH_CMD" ]; then
     output="$ICON ssh:$HOST"
     if [ "$SHOW_DIR" == "1" ]; then
         dir_name=$(basename "$DIR")
-        output="$output ($dir_name)"
+        output="$output $DIR_ICON $dir_name"
     fi
 
     echo "#[fg=$BG,bg=$BAR_BG]$L_SEP#[fg=$FG,bg=$BG,bold]$output#[fg=$BG,bg=$BAR_BG]$R_SEP "
