@@ -11,5 +11,5 @@ show_ssh_info() {
 
   # 2. Pass everything to the script
   # Order: PID, ABBR, BAR_BG, L_SEP, R_SEP, ICON, DIR, SHOW_DIR
-  echo "#($script_path #{pane_pid} '$abbr' '$bar_bg' '$l_sep' '$r_sep' '$icon' '#{pane_current_path}' '$show_dir')"
+  echo "#($script_path #{pane_pid} '$abbr' '$bar_bg' '$l_sep' '$r_sep' '$icon' '#{?pane_path,#{pane_path},#{pane_current_path}}' '$show_dir')"
 }
