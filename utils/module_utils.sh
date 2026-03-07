@@ -6,8 +6,8 @@ build_module() {
   # Ensure theme and options are loaded if we are called in a context that hasn't loaded it
   if [ -z "$THM_BG_SURFACE" ]; then
     local plugin_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
-    source "$plugin_dir/utils/options.sh"
     source "$plugin_dir/utils/theme.sh"
+    source "$plugin_dir/utils/options.sh"
   fi
 
   local module_text="$1"

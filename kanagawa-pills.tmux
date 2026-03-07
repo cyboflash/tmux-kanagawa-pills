@@ -9,9 +9,9 @@ source "$CURRENT_DIR/utils/module_utils.sh"
 main() {
   tmux set-option -g mouse on
   
-  # 1. Load configuration and theme
-  source "$CURRENT_DIR/utils/options.sh"
+  # 1. Load theme and configuration
   source "$CURRENT_DIR/utils/theme.sh"
+  source "$CURRENT_DIR/utils/options.sh"
 
   # 2. Global Settings
   local bg_bar="$KANAGAWA_BAR_BG"

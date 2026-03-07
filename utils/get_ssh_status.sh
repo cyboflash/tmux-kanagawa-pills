@@ -2,8 +2,8 @@
 
 # Determine Plugin Root and load theme
 PLUGIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
-source "$PLUGIN_DIR/utils/options.sh"
 source "$PLUGIN_DIR/utils/theme.sh"
+source "$PLUGIN_DIR/utils/options.sh"
 source "$PLUGIN_DIR/utils/module_utils.sh"
 
 PID=$1
