@@ -7,23 +7,10 @@ source "$CURRENT_DIR/utils/get_tmux_option.sh"
 source "$CURRENT_DIR/utils/module_utils.sh"
 
 main() {
-  tmux set-option -g mouse on  # 1. Load Theme Variables
-  local theme=$(get_tmux_option "@kanagawa_theme" "wave")
-  source "$CURRENT_DIR/themes/$theme.sh"
-
-  # Override theme colors if user has set them in tmux.conf
-  THM_BG_BASE=$(get_tmux_option "@kanagawa_bg_base" "$THM_BG_BASE")
-  THM_BG_SURFACE=$(get_tmux_option "@kanagawa_bg_surface" "$THM_BG_SURFACE")
-  THM_FG_TEXT=$(get_tmux_option "@kanagawa_fg_text" "$THM_FG_TEXT")
-  THM_BG_BAR=$(get_tmux_option "@kanagawa_bg_bar" "$THM_BG_BAR")
-  THM_RED=$(get_tmux_option "@kanagawa_red" "$THM_RED")
-  THM_GREEN=$(get_tmux_option "@kanagawa_green" "$THM_GREEN")
-  THM_YELLOW=$(get_tmux_option "@kanagawa_yellow" "$THM_YELLOW")
-  THM_BLUE=$(get_tmux_option "@kanagawa_blue" "$THM_BLUE")
-  THM_MAGENTA=$(get_tmux_option "@kanagawa_magenta" "$THM_MAGENTA")
-  THM_CYAN=$(get_tmux_option "@kanagawa_cyan" "$THM_CYAN")
-  THM_ORANGE=$(get_tmux_option "@kanagawa_orange" "$THM_ORANGE")
-  THM_GRAY=$(get_tmux_option "@kanagawa_gray" "$THM_GRAY")
+  tmux set-option -g mouse on
+  
+  # 1. Load Theme Variables
+  source "$CURRENT_DIR/utils/theme.sh"
 
   # 2. Global Settings
   local bg_bar=$(get_tmux_option "@kanagawa_bar_bg" "$THM_BG_BAR")

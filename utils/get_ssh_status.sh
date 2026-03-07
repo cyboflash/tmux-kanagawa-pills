@@ -1,15 +1,22 @@
 #!/usr/bin/env bash
 
+# Determine Plugin Root and load theme
+PLUGIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+source "$PLUGIN_DIR/utils/theme.sh"
+
 PID=$1
 ABBR_LEN=$2
-BG=$3
-FG=$4
-BAR_BG=$5
-L_SEP=$6
-R_SEP=$7
-ICON=$8
-DIR=$9
-SHOW_DIR=${10}
+BAR_BG=$3
+L_SEP=$4
+R_SEP=$5
+ICON=$6
+DIR=$7
+SHOW_DIR=$8
+
+# Resolve SSH colors using standard logic
+COLORS=$(get_module_colors "ssh" "$THM_MAGENTA")
+BG=$(echo "$COLORS" | cut -d' ' -f1)
+FG=$(echo "$COLORS" | cut -d' ' -f2)
 
 # Function to check a specific PID for SSH
 check_pid_for_ssh() {

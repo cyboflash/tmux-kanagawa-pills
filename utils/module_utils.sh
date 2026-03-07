@@ -3,6 +3,12 @@
 # This function builds the "Pill" string for a specific module
 # Usage: build_module "text" "icon" "bg_color" "fg_color"
 build_module() {
+  # Ensure theme is loaded if we are called in a context that hasn't loaded it
+  if [ -z "$THM_BG_SURFACE" ]; then
+    local plugin_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+    source "$plugin_dir/utils/theme.sh"
+  fi
+
   local module_text="$1"
   local module_icon="$2"
   local module_bg="$3"
