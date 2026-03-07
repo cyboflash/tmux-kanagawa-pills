@@ -6,16 +6,18 @@ source "$PLUGIN_DIR/utils/theme.sh"
 source "$PLUGIN_DIR/utils/module_utils.sh"
 
 PID=$1
-ABBR_LEN=$2
-BAR_BG=$3
-L_SEP=$4
-R_SEP=$5
-ICON=$6
-DIR=$7
-SHOW_DIR=$8
-DIR_ICON=$9
+DIR=$2
 
-# Resolve SSH colors using standard logic
+# Fetch all configuration directly from tmux for robustness
+ABBR_LEN=$(get_tmux_option "@kanagawa_ssh_abbr" "0")
+BAR_BG=$(get_tmux_option "@kanagawa_bar_bg" "default")
+L_SEP=$(get_tmux_option "@kanagawa_left_sep" "")
+R_SEP=$(get_tmux_option "@kanagawa_right_sep" "")
+ICON=$(get_tmux_option "@kanagawa_ssh_icon" "")
+SHOW_DIR=$(get_tmux_option "@kanagawa_ssh_show_dir" "1")
+DIR_ICON=$(get_tmux_option "@kanagawa_directory_icon" "")
+
+# Resolve SSH colors
 COLORS=$(get_module_colors "ssh" "$THM_MAGENTA")
 BG=$(echo "$COLORS" | cut -d' ' -f1)
 FG=$(echo "$COLORS" | cut -d' ' -f2)
