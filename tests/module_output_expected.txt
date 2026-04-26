@@ -1,0 +1,1 @@
+status-left #[fg=#C0A36E,bg=default]#[fg=#2A2A37,bg=#C0A36E,bold]❐ #S#[fg=#C0A36E,bg=default] 
