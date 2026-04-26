@@ -1,3 +1,4 @@
+# Kanagawa Dragon palette — darker, muted tones
 THM_BG_BASE="#181616"    # Sumi Ink 0
 THM_BG_SURFACE="#1F1F28" # Sumi Ink 1
 THM_FG_TEXT="#C8C093"    # Old White

@@ -1,3 +1,4 @@
+# Kanagawa Lotus palette — light theme
 THM_BG_BASE="#F2ECBC"    # Lotus White 3
 THM_BG_SURFACE="#E5E5E5" # Custom Surface (Light)
 THM_FG_TEXT="#545464"    # Lotus Ink 1

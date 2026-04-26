@@ -1,3 +1,4 @@
+# Kanagawa Wave palette — dark, cool tones
 THM_BG_BASE="#1F1F28"    # Sumi Ink 1
 THM_BG_SURFACE="#2A2A37" # Sumi Ink 4
 THM_FG_TEXT="#DCD7BA"    # Fuji White

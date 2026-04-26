@@ -1,0 +1,6 @@
+basic: host.example.com
+user@host: host.example.com
+with flags: server.dev
+abbr 4: long..
+abbr 0: long-hostname.example.com
+short no abbr: ab
